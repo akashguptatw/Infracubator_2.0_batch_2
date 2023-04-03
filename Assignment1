@@ -1,0 +1,10 @@
+1) docker pull nginx
+2) docker run -p 8080:80 -d nginx
+3) docker logs 13e56816a431 (container id)
+4) docker exec -it 13e56816a431 /bin/sh
+   Run this command inside nginx termial : nginx -v
+5) docker stop 13e56816a431
+   docker rm 13e56816a431
+   docker images
+   docker rmi f71a4866129b (image id)
+   
