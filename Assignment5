@@ -1,0 +1,12 @@
+1) Docker compose file for go-app
+
+version: '3'
+services:
+  golang-docker-app:
+    build: .
+    ports:
+      - 8080:8080
+      
+2) docker-compose up -d
+3) check where application up
+4) docker-compose down
