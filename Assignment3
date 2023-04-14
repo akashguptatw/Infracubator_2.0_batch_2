@@ -1,0 +1,14 @@
+# build stage
+FROM golang AS builder
+
+WORKDIR $GOPATH/src/
+COPY . .
+RUN go build main.go
+
+# run stage
+FROM golang:alpine
+WORKDIR $GOPATH/src/
+COPY --from=builder go/src/ .
+RUN ls -a
+EXPOSE 8080
+CMD ["go", "run", "main.go"]
