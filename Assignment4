@@ -1,0 +1,19 @@
+1) Create volume with name my-volume
+docker volume create my-volume
+
+2) Create a container and attach volume
+docker run -d -p 8081:80 --mount source=my_volume,target=/usr nginx
+
+3) Change something in volume folder
+cd /var/lib/docker/volumes
+list all volumes with command : ls -la 
+cd my_volume
+cd _data
+cd share
+cd nginx/html
+now update the index.html file with vi editor and save it
+
+4) Attached the volume with another container and see the updated index file in new container
+docker run -d -p 8082:80 --mount source=my_volume,target=/usr nginx
+
+I was able to see the updated index the html file on new port 8082
