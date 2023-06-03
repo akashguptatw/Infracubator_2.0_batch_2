@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: metadataservice
+  labels:
+    app: metadataservice
+    type: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: backend
+  template:
+    metadata:
+      labels:
+        type: backend
+    spec:
+      containers:
+        - name: metadataservice
+          image: luckyganesh/metadata-service:v1-arm
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
