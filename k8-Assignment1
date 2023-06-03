@@ -1,0 +1,9 @@
+1) kubectl run metadataservice --image=luckyganesh/metadata-service:v1-arm --port=8080
+2) kubectl logs metadataservice
+3) kubectl describe metadataservice
+4) minikube ssh
+   curl --location 'http://10.4.0.12:8080/metadataservice'
+5) kubectl describe metadataservice
+6) kubectl exec -it metadataservice -- /bin/sh
+   ls
+   exit
