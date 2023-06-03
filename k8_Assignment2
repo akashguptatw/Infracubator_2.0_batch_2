@@ -1,10 +1,10 @@
 1) kubectl create -f k8_assignemnt2_replicaset.yaml
 2) create meta entry in db
-   curl --location 'http://10.244.0.37:8080/metadata' \
+   curl --location 'http://10.4.0.12:8080/metadata' \
    --header 'Content-Type: application/json' \
    --data '{
-      "group": "parshuram",
+      "group": "akash",
       "name": "city",
-      "value": "Pune"
+      "value": "Delhi"
    }'
 3) curl --location 'http://10.4.0.12:8080/metadata'
